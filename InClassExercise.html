@@ -68,13 +68,13 @@
     
         switch (computerGuess) {
             case "r":
-                computerDisplay = '<span class="glyphicon glyphicon-cloud glyphicon-rock" aria-hidden="true"></span>';
+                computerDisplay = '<span class="glyphicon glyphicon-cloud glyphicon-rock glyph-color" aria-hidden="true"></span>';
                 break;
             case "p":
-                computerDisplay = '<span class="glyphicon glyphicon-file" aria-hidden="true"></span>';
+                computerDisplay = '<span class="glyphicon glyphicon-file glyph-color" aria-hidden="true"></span>';
                 break;
             case "s":
-                computerDisplay = '<span class="glyphicon glyphicon-scissors" aria-hidden="true"></span>';
+                computerDisplay = '<span class="glyphicon glyphicon-scissors glyph-color" aria-hidden="true"></span>';
                 break;
         }
 
@@ -111,17 +111,20 @@
                 '<div class="col-md-3"></div>' +
                 '<div class="col-md-6">' +
                     '<div class="progress">' +
-                        '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' + wins + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + wins + '%">' +
+                        '<div class="progress-bar progress-bar-success bar-style" role="progressbar" aria-valuenow="' + wins + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + wins + '%">' +
+                        wins + 
                         '<span class="sr-only">' + wins + '% Complete (success)</span>' +
                         '</div>' +
                     '</div>' +
                     '<div class="progress">' +
-                        '<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="' + losses + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + losses + '%">' +
+                        '<div class="progress-bar progress-bar-danger bar-style" role="progressbar" aria-valuenow="' + losses + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + losses + '%">' +
+                        losses + 
                         '<span class="sr-only">' + losses + '% Complete (danger)</span>' +
                         '</div>' +
                     '</div>' + 
                     '<div class="progress">' +
-                        '<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="' + ties + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + ties + '%">' +
+                        '<div class="progress-bar progress-bar-warning bar-style" role="progressbar" aria-valuenow="' + ties + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + ties + '%">' +
+                        ties + 
                         '<span class="sr-only">' + ties + '% Complete (warning)</span>' +
                         '</div>' +
                     '</div>' +

@@ -3,8 +3,8 @@
     top: 4px;
 }
 
-.gylph-color {
-    color: cornflowerblue;
+.glyph-color {
+    color: #31708f;
 }
 
 .col-align {
@@ -32,4 +32,8 @@
 
 .row-margin-sm {
     margin-bottom: 5px;
+}
+
+.bar-style {
+    min-width: 2em;
 }
