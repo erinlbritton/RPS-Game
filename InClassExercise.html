@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+                
+        <div class="jumbotron">
+            <h3>
+                <center>
+                    <div class="row row-margin">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 btn-align">
+                            <input type="button" class="btn btn-info btn-lg btn-size" onclick="choose(this.value)" value="Rock">
+                            </input>
+
+                            <input type="button" class="btn btn-info btn-lg btn-size" onclick="choose(this.value)" value="Paper">
+                            </input>
+
+                            <input type="button" class="btn btn-info btn-lg btn-size" onclick="choose(this.value)" value="Scissors">
+                            </input>    
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>                    
+                    <div id="game">
+                        
+                    </div>
+                </center>
+            </h3>
+        </div>
+    
+</div>
+
+    <script>
+    var computerChoices = ["r", "p", "s"];
+
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
+    var userGuess = '';
+
+    function choose(value)
+    {
+        var userGuess = value[0].toLowerCase();
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+        if ((userGuess === "r") && (computerGuess === "s")) {
+                wins++;
+            } else if ((userGuess === "p") && (computerGuess === "r")) {
+                wins++;
+            } else if ((userGuess === "s") && (computerGuess === "p")) {
+                wins++;
+            } else if ((userGuess === "s") && (computerGuess === "r")) {
+                losses++;
+            } else if ((userGuess === "r") && (computerGuess === "p")) {
+                losses++;
+            } else if ((userGuess === "p") && (computerGuess === "s")) {
+                losses++;
+            } else {
+                ties++;
+            }
+    
+        switch (computerGuess) {
+            case "r":
+                computerDisplay = '<span class="glyphicon glyphicon-cloud glyphicon-rock" aria-hidden="true"></span>';
+                break;
+            case "p":
+                computerDisplay = '<span class="glyphicon glyphicon-file" aria-hidden="true"></span>';
+                break;
+            case "s":
+                computerDisplay = '<span class="glyphicon glyphicon-scissors" aria-hidden="true"></span>';
+                break;
+        }
+
+        switch (userGuess) {
+            case "r":
+                userDisplay = '<span class="glyphicon glyphicon-cloud glyphicon-rock glyph-color" aria-hidden="true"></span>';
+                break;
+            case "p":
+                userDisplay = '<span class="glyphicon glyphicon-file glyph-color" aria-hidden="true"></span>';
+                break;
+            case "s":
+                userDisplay = '<span class="glyphicon glyphicon-scissors glyph-color" aria-hidden="true"></span>';
+                break;
+        }
+
+        var html =
+            '<div class="row row-margin-sm">' +
+                '<div class="col-md-3"></div>' +
+                '<div class="col-md-3">' +
+                    '<div class="panel panel-info">' +
+                        '<div class="panel-heading">You</div>' +
+                        '<div class="panel-body">' + userDisplay + '</div>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="col-md-3">' +
+                    '<div class="panel panel-info">' +
+                        '<div class="panel-heading">Computer</div>' +
+                        '<div class="panel-body">' + computerDisplay + '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+
+            '<div class="row">' +
+                '<div class="col-md-3"></div>' +
+                '<div class="col-md-6">' +
+                    '<div class="progress">' +
+                        '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' + wins + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + wins + '%">' +
+                        '<span class="sr-only">' + wins + '% Complete (success)</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="progress">' +
+                        '<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="' + losses + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + losses + '%">' +
+                        '<span class="sr-only">' + losses + '% Complete (danger)</span>' +
+                        '</div>' +
+                    '</div>' + 
+                    '<div class="progress">' +
+                        '<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="' + ties + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + ties + '%">' +
+                        '<span class="sr-only">' + ties + '% Complete (warning)</span>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>'        
+          ;
+
+        document.querySelector("#game").innerHTML = html;
+
+    };     
+        
+    
+    
+
+    
+// Math.floor(Math.random() * 3)
+    // for (var i = 0; i < 1; i++) {
+    //     console.log(RPSrules[Math.floor(Math.random() * 3)]);
+    //   }
+    </script>
+</body>
+</html>

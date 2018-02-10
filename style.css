@@ -1,0 +1,35 @@
+
+.glyphicon-rock {
+    top: 4px;
+}
+
+.gylph-color {
+    color: cornflowerblue;
+}
+
+.col-align {
+    margin: 15px;
+}
+
+.dummy-border {
+    border: 1px solid red;
+}
+
+.btn-align {
+    display: flex;
+    justify-content: space-between;
+
+}   
+
+.btn-size {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.row-margin {
+    margin-bottom: 30px;
+}
+
+.row-margin-sm {
+    margin-bottom: 5px;
+}
